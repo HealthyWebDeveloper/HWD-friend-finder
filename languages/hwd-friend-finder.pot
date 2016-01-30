@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: HWD Friend Finder\n"
-"POT-Creation-Date: 2016-01-30 12:09-0700\n"
-"PO-Revision-Date: 2016-01-30 12:08-0700\n"
+"POT-Creation-Date: 2016-01-30 12:52-0700\n"
+"PO-Revision-Date: 2016-01-30 12:52-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,49 +20,49 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: hwd-friend-finder.php:47 hwd-friend-finder.php:58
-msgid "Plural Name"
+#: hwd-friend-finder.php:58 hwd-friend-finder.php:69
+msgid "Friends"
 msgstr ""
 
-#: hwd-friend-finder.php:48
-msgid "Singular Name"
+#: hwd-friend-finder.php:59
+msgid "Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:49
+#: hwd-friend-finder.php:60
 msgctxt "hwd"
-msgid "Add New Singular Name"
+msgid "Add New Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:50
-msgid "Add New Singular Name"
+#: hwd-friend-finder.php:61
+msgid "Add New Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:51
-msgid "Edit Singular Name"
+#: hwd-friend-finder.php:62
+msgid "Edit Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:52
-msgid "New Singular Name"
+#: hwd-friend-finder.php:63
+msgid "New Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:53
-msgid "View Singular Name"
+#: hwd-friend-finder.php:64
+msgid "View Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:54
-msgid "Search Plural Name"
+#: hwd-friend-finder.php:65
+msgid "Search Friends"
 msgstr ""
 
-#: hwd-friend-finder.php:55
-msgid "No Plural Name found"
+#: hwd-friend-finder.php:66
+msgid "No Friends found"
 msgstr ""
 
-#: hwd-friend-finder.php:56
-msgid "No Plural Name found in Trash"
+#: hwd-friend-finder.php:67
+msgid "No Friends found in Trash"
 msgstr ""
 
-#: hwd-friend-finder.php:57
-msgid "Parent Singular Name:"
+#: hwd-friend-finder.php:68
+msgid "Parent Friend:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
