@@ -5,7 +5,7 @@ Description: Adds custom post type and fun stuff for Fibit tools on a WordPress 
 Plugin URI: http://healthywebdeveloper.com
 Author: Bradford Knowlton
 Author URI: http://bradknowlton.com
-Version: 1.0.4
+Version: 1.0.6
 License: GPL2
 Text Domain: hwd
 Domain Path: /languages
@@ -58,7 +58,7 @@ Requires WP: 4.4
     		'not_found'           => __( 'No Friends found', 'hwd' ),
     		'not_found_in_trash'  => __( 'No Friends found in Trash', 'hwd' ),
     		'parent_item_colon'   => __( 'Parent Friend:', 'hwd' ),
-    		'menu_name'           => __( 'Plural Name', 'hwd' ),
+    		'menu_name'           => __( 'Friends', 'hwd' ),
     	);
     
     	$args = array(
@@ -68,11 +68,11 @@ Requires WP: 4.4
     		'taxonomies'          => array(),
     		'public'              => true,
     		'show_ui'             => true,
-    		'show_in_menu'        => false,
+    		'show_in_menu'        => true,
     		'show_in_admin_bar'   => false,
     		'menu_position'       => null,
-    		'menu_icon'           => 'dashicons-groups',
-    		'show_in_nav_menus'   => true,
+    		'menu_icon'           => plugins_url( '/assets/images/fitbit-logo-32x32.png', __FILE__ ),
+    		'show_in_nav_menus'   => false,
     		'publicly_queryable'  => false,
     		'exclude_from_search' => true,
     		'has_archive'         => true,
