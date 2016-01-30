@@ -62,7 +62,7 @@ class Friend_Post_Type {
 
 		register_post_type( 'friend', $args );
 
-		add_filter( 'manage_edit-friend_columns', array( 'Friend_Post_Type', 'edit_friend_columns' ) ) ;
+		add_filter( 'manage_edit-friend_columns', array( 'Friend_Post_Type', 'edit_friend_columns' ) );
 
 		add_action( 'manage_friend_posts_custom_column', array( 'Friend_Post_Type', 'manage_friend_columns' ), 10, 2 );
 
@@ -215,4 +215,4 @@ class Friend_Post_Type {
 } // end Friend_Post_Type Class
 
 
-add_shortcode( 'init', array( 'Friend_Post_Type', 'register_custom_post_type' ) );
+add_action( 'init', array( 'Friend_Post_Type', 'register_custom_post_type' ) );
