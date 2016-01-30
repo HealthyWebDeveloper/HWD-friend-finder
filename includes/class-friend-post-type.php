@@ -115,7 +115,7 @@ class Friend_Post_Type {
 
 				/* If no phone number is found, output a default message. */
 				if ( empty( $gender ) )
-					echo __( '' );
+					echo __( 'N/A' );
 
 				/* If there is a phone number, format it to the text string. */
 				else
@@ -131,7 +131,7 @@ class Friend_Post_Type {
 
 				/* If no duration is found, output a default message. */
 				if ( empty( $avatar ) )
-					echo __( '' );
+					echo __( 'N/A' );
 
 				/* If there is a landing page, format it to the text string. */
 				else
@@ -168,7 +168,7 @@ class Friend_Post_Type {
 
 				/* If no duration is found, output a default message. */
 				if ( empty( $city ) || empty( $country ) )
-					echo __( '' );
+					echo __( 'N/A' );
 
 				/* If there is a city, format it to the text string. */
 				else
@@ -184,7 +184,7 @@ class Friend_Post_Type {
 
 				/* If no duration is found, output a default message. */
 				if ( empty( $displayName ) )
-					echo __( '' );
+					echo __( 'N/A' );
 
 				/* If there is a displayName, format it to the text string. */
 				else

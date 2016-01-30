@@ -44,7 +44,7 @@ class Friend_Shortcode {
 		 		$displayName = get_post_meta( get_the_id(), 'displayName', true );
 		 		$avatar = get_post_meta( get_the_id(), 'avatar150', true );
 
-		        $return .=  sprintf('<div class="hwd-profile-list-item small-12 medium-4 columns"><img src="%s" /><h2>%s</h2><p class="hide">%s</p></div>', $displayName, $avatar, get_the_content() );
+		        $return .=  sprintf('<div class="hwd-profile-list-item"><img src="%s" /><h2>%s</h2><div class="hide">%s</div></div>', $avatar, $displayName, get_the_content() );
 		     endwhile;
 	     
 	     else:

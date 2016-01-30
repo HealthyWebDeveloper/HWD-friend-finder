@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: HWD Friend Finder\n"
-"POT-Creation-Date: 2016-01-30 12:52-0700\n"
-"PO-Revision-Date: 2016-01-30 12:52-0700\n"
+"POT-Creation-Date: 2016-01-30 16:03-0700\n"
+"PO-Revision-Date: 2016-01-30 16:02-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,49 +20,96 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: hwd-friend-finder.php:58 hwd-friend-finder.php:69
+#: includes/class-friend-post-type.php:23
+#: includes/class-friend-post-type.php:34
 msgid "Friends"
 msgstr ""
 
-#: hwd-friend-finder.php:59
+#: includes/class-friend-post-type.php:24
 msgid "Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:60
+#: includes/class-friend-post-type.php:25
 msgctxt "hwd"
 msgid "Add New Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:61
+#: includes/class-friend-post-type.php:26
 msgid "Add New Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:62
+#: includes/class-friend-post-type.php:27
 msgid "Edit Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:63
+#: includes/class-friend-post-type.php:28
 msgid "New Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:64
+#: includes/class-friend-post-type.php:29
 msgid "View Friend"
 msgstr ""
 
-#: hwd-friend-finder.php:65
+#: includes/class-friend-post-type.php:30
 msgid "Search Friends"
 msgstr ""
 
-#: hwd-friend-finder.php:66
+#: includes/class-friend-post-type.php:31
 msgid "No Friends found"
 msgstr ""
 
-#: hwd-friend-finder.php:67
+#: includes/class-friend-post-type.php:32
 msgid "No Friends found in Trash"
 msgstr ""
 
-#: hwd-friend-finder.php:68
+#: includes/class-friend-post-type.php:33
 msgid "Parent Friend:"
+msgstr ""
+
+#: includes/class-friend-post-type.php:86
+msgid "Avatar"
+msgstr ""
+
+#: includes/class-friend-post-type.php:87
+msgid "Fitbit Id"
+msgstr ""
+
+#: includes/class-friend-post-type.php:88
+msgid "Display Name"
+msgstr ""
+
+#: includes/class-friend-post-type.php:89
+msgid "Location"
+msgstr ""
+
+#: includes/class-friend-post-type.php:91
+msgid "Gender"
+msgstr ""
+
+#: includes/class-friend-post-type.php:93
+msgid "Fitbit Profile"
+msgstr ""
+
+#: includes/class-friend-post-type.php:94
+msgid "Date Joined"
+msgstr ""
+
+#: includes/class-friend-post-type.php:118
+#: includes/class-friend-post-type.php:134
+#: includes/class-friend-post-type.php:152
+#: includes/class-friend-post-type.php:171
+#: includes/class-friend-post-type.php:187
+msgid "N/A"
+msgstr ""
+
+#: includes/class-friend-post-type.php:139
+#, php-format
+msgid "<img src=\"%s\" class=\"hwd-small-thumbnail\" />"
+msgstr ""
+
+#: includes/class-friend-post-type.php:157
+#, php-format
+msgid "<a href=\"https://www.fitbit.com/user/%s\" target=\"_BLANK\">%s</a>"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
