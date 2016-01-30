@@ -33,9 +33,9 @@ gulp.task('sass', function() {
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
-        .pipe(concat('hwd-script.js'))
+        .pipe(concat('hwd-scripts.js'))
         .pipe(gulp.dest('assets/js'))
-        .pipe(rename('hwd-script.min.js'))
+        .pipe(rename('hwd-scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/js'));
 });
