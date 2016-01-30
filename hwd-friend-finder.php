@@ -5,13 +5,16 @@ Description: Adds custom post type and fun stuff for Fibit tools on a WordPress 
 Plugin URI: http://healthywebdeveloper.com
 Author: Bradford Knowlton
 Author URI: http://bradknowlton.com
-Version: 1.0.3
+Version: 1.0.4
 License: GPL2
 Text Domain: hwd
 Domain Path: /languages
 
 GitHub Plugin URI: https://github.com/HealthyWebDeveloper/HWD-friend-finder
+GitHub Branch: master
 
+Requires PHP: 5.3.0
+Requires WP: 4.4
 */
 
 /*
@@ -44,17 +47,17 @@ GitHub Plugin URI: https://github.com/HealthyWebDeveloper/HWD-friend-finder
     function hwd_register_name() {
     
     	$labels = array(
-    		'name'                => __( 'Plural Name', 'hwd' ),
-    		'singular_name'       => __( 'Singular Name', 'hwd' ),
-    		'add_new'             => _x( 'Add New Singular Name', 'hwd' ),
-    		'add_new_item'        => __( 'Add New Singular Name', 'hwd' ),
-    		'edit_item'           => __( 'Edit Singular Name', 'hwd' ),
-    		'new_item'            => __( 'New Singular Name', 'hwd' ),
-    		'view_item'           => __( 'View Singular Name', 'hwd' ),
-    		'search_items'        => __( 'Search Plural Name', 'hwd' ),
-    		'not_found'           => __( 'No Plural Name found', 'hwd' ),
-    		'not_found_in_trash'  => __( 'No Plural Name found in Trash', 'hwd' ),
-    		'parent_item_colon'   => __( 'Parent Singular Name:', 'hwd' ),
+    		'name'                => __( 'Friends', 'hwd' ),
+    		'singular_name'       => __( 'Friend', 'hwd' ),
+    		'add_new'             => _x( 'Add New Friend', 'hwd' ),
+    		'add_new_item'        => __( 'Add New Friend', 'hwd' ),
+    		'edit_item'           => __( 'Edit Friend', 'hwd' ),
+    		'new_item'            => __( 'New Friend', 'hwd' ),
+    		'view_item'           => __( 'View Friend', 'hwd' ),
+    		'search_items'        => __( 'Search Friends', 'hwd' ),
+    		'not_found'           => __( 'No Friends found', 'hwd' ),
+    		'not_found_in_trash'  => __( 'No Friends found in Trash', 'hwd' ),
+    		'parent_item_colon'   => __( 'Parent Friend:', 'hwd' ),
     		'menu_name'           => __( 'Plural Name', 'hwd' ),
     	);
     
@@ -65,13 +68,13 @@ GitHub Plugin URI: https://github.com/HealthyWebDeveloper/HWD-friend-finder
     		'taxonomies'          => array(),
     		'public'              => true,
     		'show_ui'             => true,
-    		'show_in_menu'        => true,
-    		'show_in_admin_bar'   => true,
+    		'show_in_menu'        => false,
+    		'show_in_admin_bar'   => false,
     		'menu_position'       => null,
-    		'menu_icon'           => null,
+    		'menu_icon'           => 'dashicons-groups',
     		'show_in_nav_menus'   => true,
-    		'publicly_queryable'  => true,
-    		'exclude_from_search' => false,
+    		'publicly_queryable'  => false,
+    		'exclude_from_search' => true,
     		'has_archive'         => true,
     		'query_var'           => true,
     		'can_export'          => true,
@@ -84,7 +87,7 @@ GitHub Plugin URI: https://github.com/HealthyWebDeveloper/HWD-friend-finder
     			)
     	);
     
-    	register_post_type( 'slug', $args );
+    	register_post_type( 'friend', $args );
     }
     
     add_action( 'init', 'hwd_register_name' );
