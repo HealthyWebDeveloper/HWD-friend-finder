@@ -23,10 +23,10 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('src/scss/*.scss')
         .pipe(sass())
-        .pipe(rename('hwd-style.css'))
+        .pipe(rename('hwd-styles.css'))
         .pipe(gulp.dest('assets/css'))
         .pipe(minify())
-        .pipe(rename('hwd-style.min.css'))
+        .pipe(rename('hwd-styles.min.css'))
         .pipe(gulp.dest('assets/css'));
 });
 
