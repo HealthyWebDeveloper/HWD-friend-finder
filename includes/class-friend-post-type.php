@@ -44,7 +44,7 @@ class Friend_Post_Type {
 			'show_in_menu'        => true,
 			'show_in_admin_bar'   => false,
 			'menu_position'       => 6,
-			'menu_icon'           => plugins_url( '/assets/images/fitbit-logo-16x16.png', __FILE__ ),
+			'menu_icon'           => plugins_url( '../assets/images/fitbit-logo-16x16.png', __FILE__ ),
 			'show_in_nav_menus'   => false,
 			'publicly_queryable'  => false,
 			'exclude_from_search' => true,
@@ -83,10 +83,13 @@ class Friend_Post_Type {
 		
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'title' => __( 'Friend' ),
-			'city' => __( 'City' ),
-			'phonenumber' => __( 'Phone Number' ),
-			'landingpage' => __( 'Landing Page' )
+			'title' => __( 'Id' ),
+			'displayName' => __( 'Display Name' ),
+			'location' => __( 'Location' ),
+			// 'country' => __( 'Country' ),
+			'gender' => __( 'Gender' ),
+			// 'phonenumber' => __( 'Phone Number' ),
+			'landingpage' => __( 'Fitbit Profile' )
 			
 		);
 
@@ -102,19 +105,19 @@ class Friend_Post_Type {
 
 		switch( $column ) {
 
-			/* If displaying the 'phonenumber' column. */
-			case 'phonenumber' :
+			/* If displaying the 'gender' column. */
+			case 'gender' :
 
 				/* Get the post meta. */
-				$phonenumber = get_post_meta( $post_id, 'phonenumber', true );
+				$gender = get_post_meta( $post_id, 'gender', true );
 
 				/* If no phone number is found, output a default message. */
-				if ( empty( $phonenumber ) )
+				if ( empty( $gender ) )
 					echo __( 'N/A' );
 
 				/* If there is a phone number, format it to the text string. */
 				else
-					echo format_phone_number( $phonenumber );
+					echo $gender;
 
 			break;
 			
@@ -122,7 +125,7 @@ class Friend_Post_Type {
 			case 'landingpage' :
 
 				/* Get the post meta. */
-				$landingpage = get_post_meta( $post_id, 'landingpage', true );
+				$landingpage = get_post_meta( $post_id, 'encodedId', true );
 
 				/* If no duration is found, output a default message. */
 				if ( empty( $landingpage ) )
@@ -131,24 +134,41 @@ class Friend_Post_Type {
 				/* If there is a landing page, format it to the text string. */
 				else
 					// echo '<a href="'.get_permalink($city).'">'.get_the_title($city).'</a>';
-					printf( __( '<a href="%s?friend=%s">%s</a>' ), get_permalink($landingpage), get_the_title($post_id), get_the_title($landingpage) );
+					printf( __( '<a href="https://www.fitbit.com/user/%s" target="_BLANK">%s</a>' ), $landingpage, get_the_title($post_id) );
 					
 
 			break;
 
 			/* If displaying the 'city' column. */
-			case 'city' :
+			case 'location' :
 
 				/* Get the post meta. */
 				$city = get_post_meta( $post_id, 'city', true );
+				$country = get_post_meta( $post_id, 'country', true );
 
 				/* If no duration is found, output a default message. */
-				if ( empty( $city ) )
-					echo __( 'N/A' );
+				if ( empty( $city ) || empty( $country ) )
+					echo __( '' );
 
 				/* If there is a city, format it to the text string. */
 				else
-					echo $city;
+					echo $city.', '.$country;
+
+			break;
+
+			/* If displaying the 'displayName' column. */
+			case 'displayName' :
+
+				/* Get the post meta. */
+				$displayName = get_post_meta( $post_id, 'displayName', true );
+
+				/* If no duration is found, output a default message. */
+				if ( empty( $displayName ) )
+					echo __( '' );
+
+				/* If there is a displayName, format it to the text string. */
+				else
+					echo $displayName;
 
 			break;
 			
@@ -168,7 +188,9 @@ class Friend_Post_Type {
 	  */
 	public static function friend_sortable_columns( $columns ) {
 
-		$columns['city'] = 'city';
+		$columns['location'] = 'location';
+		// $columns['country'] = 'country';
+		$columns['displayName'] = 'displayName';
 		// landing page values are numeric, may not be logical to sort
 		// $columns['landingpage'] = 'landingpage';
 
@@ -191,17 +213,29 @@ class Friend_Post_Type {
 	  */
 	function sort_friend( $vars ) {
 
-		/* Check if we're viewing the 'movie' post type. */
+		/* Check if we're viewing the 'friend' post type. */
 		if ( isset( $vars['post_type'] ) && 'friend' == $vars['post_type'] ) {
 
-			/* Check if 'orderby' is set to 'duration'. */
-			if ( isset( $vars['orderby'] ) && 'city' == $vars['orderby'] ) {
+			/* Check if 'orderby' is set to 'location'. */
+			if ( isset( $vars['orderby'] ) && 'location' == $vars['orderby'] ) {
 
 				/* Merge the query vars with our custom variables. */
 				$vars = array_merge(
 					$vars,
 					array(
 						'meta_key' => 'city',
+						'orderby' => 'meta_value'
+					)
+				);
+			} else
+			/* Check if 'orderby' is set to 'displayName'. */
+			if ( isset( $vars['orderby'] ) && 'displayName' == $vars['orderby'] ) {
+
+				/* Merge the query vars with our custom variables. */
+				$vars = array_merge(
+					$vars,
+					array(
+						'meta_key' => 'displayName',
 						'orderby' => 'meta_value'
 					)
 				);
