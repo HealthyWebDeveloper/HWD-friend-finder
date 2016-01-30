@@ -61,7 +61,158 @@ class Friend_Post_Type {
 		);
 
 		register_post_type( 'friend', $args );
+
+		add_filter( 'manage_edit-friend_columns', array( 'Friend_Post_Type', 'edit_friend_columns' ) ) ;
+
+		add_action( 'manage_friend_posts_custom_column', array( 'Friend_Post_Type', 'manage_friend_columns' ), 10, 2 );
+
+		add_filter( 'manage_edit-friend_sortable_columns', array( 'Friend_Post_Type', 'friend_sortable_columns' ) );
+
+		/* Only run our customization on the 'edit.php' page in the admin. */
+		add_action( 'load-edit.php', array( 'Friend_Post_Type', 'edit_friend_load' ) );
 	}
-}
+
+
+	/**
+	  * Custom columns for friend custom post type edit screen
+	  *
+	  */
+	public static function edit_friend_columns( $columns ) {
+
+		// possible value
+		
+		$columns = array(
+			'cb' => '<input type="checkbox" />',
+			'title' => __( 'Friend' ),
+			'city' => __( 'City' ),
+			'phonenumber' => __( 'Phone Number' ),
+			'landingpage' => __( 'Landing Page' )
+			
+		);
+
+		return $columns;
+	}
+
+	/**
+	  * Returns values for columns for friend custom post type edit screen
+	  *
+	  */  
+	public static function manage_friend_columns( $column, $post_id ) {
+		global $post;
+
+		switch( $column ) {
+
+			/* If displaying the 'phonenumber' column. */
+			case 'phonenumber' :
+
+				/* Get the post meta. */
+				$phonenumber = get_post_meta( $post_id, 'phonenumber', true );
+
+				/* If no phone number is found, output a default message. */
+				if ( empty( $phonenumber ) )
+					echo __( 'N/A' );
+
+				/* If there is a phone number, format it to the text string. */
+				else
+					echo format_phone_number( $phonenumber );
+
+			break;
+			
+			/* If displaying the 'landingpage' column. */
+			case 'landingpage' :
+
+				/* Get the post meta. */
+				$landingpage = get_post_meta( $post_id, 'landingpage', true );
+
+				/* If no duration is found, output a default message. */
+				if ( empty( $landingpage ) )
+					echo __( 'N/A' );
+
+				/* If there is a landing page, format it to the text string. */
+				else
+					// echo '<a href="'.get_permalink($city).'">'.get_the_title($city).'</a>';
+					printf( __( '<a href="%s?friend=%s">%s</a>' ), get_permalink($landingpage), get_the_title($post_id), get_the_title($landingpage) );
+					
+
+			break;
+
+			/* If displaying the 'city' column. */
+			case 'city' :
+
+				/* Get the post meta. */
+				$city = get_post_meta( $post_id, 'city', true );
+
+				/* If no duration is found, output a default message. */
+				if ( empty( $city ) )
+					echo __( 'N/A' );
+
+				/* If there is a city, format it to the text string. */
+				else
+					echo $city;
+
+			break;
+			
+
+			/* Just break out of the switch statement for everything else. */
+			default :
+				break;
+		}
+	}
+
+
+	 /**
+	  * Adds sortable columns to friend custom post type edit screen
+	  *
+	  * @param array $columns Array of sortable columns
+	  *
+	  */
+	public static function friend_sortable_columns( $columns ) {
+
+		$columns['city'] = 'city';
+		// landing page values are numeric, may not be logical to sort
+		// $columns['landingpage'] = 'landingpage';
+
+		return $columns;
+	}
+
+	 /**
+	  * Returns values for columns for friend custom post type edit screen
+	  *
+	  */
+	public static function edit_friend_load() {
+		add_filter( 'request', array( 'Friend_Post_Type',  'sort_friend' ) );
+	}
+
+	/**
+	  * Returns custom sort values for post type edit screen
+	  *
+	  * @param array $vars Array of custom query variables
+	  *
+	  */
+	function sort_friend( $vars ) {
+
+		/* Check if we're viewing the 'movie' post type. */
+		if ( isset( $vars['post_type'] ) && 'friend' == $vars['post_type'] ) {
+
+			/* Check if 'orderby' is set to 'duration'. */
+			if ( isset( $vars['orderby'] ) && 'city' == $vars['orderby'] ) {
+
+				/* Merge the query vars with our custom variables. */
+				$vars = array_merge(
+					$vars,
+					array(
+						'meta_key' => 'city',
+						'orderby' => 'meta_value'
+					)
+				);
+			}
+		}
+
+		return $vars;
+	}
+
+
+} // end Friend_Post_Type Class
+
 
 add_shortcode( 'init', array( 'Friend_Post_Type', 'register_custom_post_type' ) );
