@@ -22,7 +22,7 @@ class Friend_Post_Type {
 		$labels = array(
 			'name'                => __( 'Friends', 'hwd' ),
 			'singular_name'       => __( 'Friend', 'hwd' ),
-			'add_new'             => _x( 'Add New Friend', 'hwd' ),
+			'add_new'             => _x( 'Add New Friend', 'Add New Friend', 'hwd' ),
 			'add_new_item'        => __( 'Add New Friend', 'hwd' ),
 			'edit_item'           => __( 'Edit Friend', 'hwd' ),
 			'new_item'            => __( 'New Friend', 'hwd' ),
