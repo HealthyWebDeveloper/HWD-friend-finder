@@ -83,7 +83,7 @@ class Friend_Post_Type {
 		
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'avatar' => __( '' ),
+			'avatar' => __( 'Avatar' ),
 			'title' => __( 'Id' ),
 			'displayName' => __( 'Display Name' ),
 			'location' => __( 'Location' ),
@@ -126,7 +126,7 @@ class Friend_Post_Type {
 			case 'avatar' :
 
 				/* Get the post meta. */
-				$avatar = get_post_meta( $post_id, 'avatar', true );
+				$avatar = get_post_meta( $post_id, 'avatar150', true );
 
 				/* If no duration is found, output a default message. */
 				if ( empty( $avatar ) )
