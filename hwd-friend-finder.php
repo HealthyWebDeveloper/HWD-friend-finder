@@ -5,7 +5,7 @@ Description: Adds custom post type and fun stuff for Fibit tools on a WordPress 
 Plugin URI: http://healthywebdeveloper.com
 Author: Bradford Knowlton
 Author URI: http://bradknowlton.com
-Version: 1.0.2
+Version: 1.0.3
 License: GPL2
 Text Domain: hwd
 Domain Path: /languages
@@ -44,18 +44,18 @@ GitHub Plugin URI: https://github.com/HealthyWebDeveloper/HWD-friend-finder
     function hwd_register_name() {
     
     	$labels = array(
-    		'name'                => __( 'Plural Name', 'text-domain' ),
-    		'singular_name'       => __( 'Singular Name', 'text-domain' ),
-    		'add_new'             => _x( 'Add New Singular Name', 'text-domain', 'text-domain' ),
-    		'add_new_item'        => __( 'Add New Singular Name', 'text-domain' ),
-    		'edit_item'           => __( 'Edit Singular Name', 'text-domain' ),
-    		'new_item'            => __( 'New Singular Name', 'text-domain' ),
-    		'view_item'           => __( 'View Singular Name', 'text-domain' ),
-    		'search_items'        => __( 'Search Plural Name', 'text-domain' ),
-    		'not_found'           => __( 'No Plural Name found', 'text-domain' ),
-    		'not_found_in_trash'  => __( 'No Plural Name found in Trash', 'text-domain' ),
-    		'parent_item_colon'   => __( 'Parent Singular Name:', 'text-domain' ),
-    		'menu_name'           => __( 'Plural Name', 'text-domain' ),
+    		'name'                => __( 'Plural Name', 'hwd' ),
+    		'singular_name'       => __( 'Singular Name', 'hwd' ),
+    		'add_new'             => _x( 'Add New Singular Name', 'hwd' ),
+    		'add_new_item'        => __( 'Add New Singular Name', 'hwd' ),
+    		'edit_item'           => __( 'Edit Singular Name', 'hwd' ),
+    		'new_item'            => __( 'New Singular Name', 'hwd' ),
+    		'view_item'           => __( 'View Singular Name', 'hwd' ),
+    		'search_items'        => __( 'Search Plural Name', 'hwd' ),
+    		'not_found'           => __( 'No Plural Name found', 'hwd' ),
+    		'not_found_in_trash'  => __( 'No Plural Name found in Trash', 'hwd' ),
+    		'parent_item_colon'   => __( 'Parent Singular Name:', 'hwd' ),
+    		'menu_name'           => __( 'Plural Name', 'hwd' ),
     	);
     
     	$args = array(
