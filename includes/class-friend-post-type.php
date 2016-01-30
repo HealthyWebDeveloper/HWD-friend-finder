@@ -83,6 +83,7 @@ class Friend_Post_Type {
 		
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
+			'avatar' => __( '' ),
 			'title' => __( 'Id' ),
 			'displayName' => __( 'Display Name' ),
 			'location' => __( 'Location' ),
@@ -118,6 +119,24 @@ class Friend_Post_Type {
 				/* If there is a phone number, format it to the text string. */
 				else
 					echo $gender;
+
+			break;
+
+			/* If displaying the 'avatar' column. */
+			case 'avatar' :
+
+				/* Get the post meta. */
+				$avatar = get_post_meta( $post_id, 'avatar', true );
+
+				/* If no duration is found, output a default message. */
+				if ( empty( $avatar ) )
+					echo __( '' );
+
+				/* If there is a landing page, format it to the text string. */
+				else
+					// echo '<a href="'.get_permalink($city).'">'.get_the_title($city).'</a>';
+					printf( __( '<img src="%s" class="hwd-small-thumbnail" />' ), $avatar );
+					
 
 			break;
 			

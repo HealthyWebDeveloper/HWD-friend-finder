@@ -5,7 +5,7 @@ Description: Adds custom post type and fun stuff for Fibit tools on a WordPress 
 Plugin URI: http://healthywebdeveloper.com
 Author: Bradford Knowlton
 Author URI: http://bradknowlton.com
-Version: 1.1.4
+Version: 1.1.5
 License: GPL2
 Text Domain: hwd
 Domain Path: /languages
@@ -38,7 +38,7 @@ Requires WP: 4.4
 // Help with setting up gulp
 // https://travismaynard.com/writing/getting-started-with-gulp
 
-define( 'HWD_PLUGIN_VERSION', '1.1.4' );  
+define( 'HWD_PLUGIN_VERSION', '1.1.5' );  
 
 // possible future global
 // define( 'PLUGIN_DIR', dirname(__FILE__).'/' );  
@@ -65,6 +65,7 @@ function hwd_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'hwd_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'hwd_enqueue_scripts' );
 
 function hwd_rewrite_flush() {
     // First, we "add" the custom post type via the above written function.
