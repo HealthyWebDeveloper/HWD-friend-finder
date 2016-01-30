@@ -6,4 +6,4 @@
  * @package hwd-friend-finder
  */
 
-alert('Hello World');
+// alert('Hello World');

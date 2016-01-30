@@ -84,13 +84,14 @@ class Friend_Post_Type {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
 			'avatar' => __( 'Avatar' ),
-			'title' => __( 'Id' ),
+			'title' => __( 'Fitbit Id' ),
 			'displayName' => __( 'Display Name' ),
 			'location' => __( 'Location' ),
 			// 'country' => __( 'Country' ),
 			'gender' => __( 'Gender' ),
 			// 'phonenumber' => __( 'Phone Number' ),
-			'landingpage' => __( 'Fitbit Profile' )
+			'landingpage' => __( 'Fitbit Profile' ),
+			'date' => __( 'Date Joined' )
 			
 		);
 
@@ -114,11 +115,11 @@ class Friend_Post_Type {
 
 				/* If no phone number is found, output a default message. */
 				if ( empty( $gender ) )
-					echo __( 'N/A' );
+					echo __( '' );
 
 				/* If there is a phone number, format it to the text string. */
 				else
-					echo $gender;
+					echo ucwords( strtolower( $gender ) );
 
 			break;
 
