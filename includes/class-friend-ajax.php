@@ -25,9 +25,18 @@ class Friend_Ajax {
 
 		}
 
+		public static function ajaxurl() {
+			?>
+			<script type="text/javascript">
+			var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+			</script>
+			<?php
+		}
+
 
 } // end Friend_Ajax Class
 
 
 add_action( 'wp_ajax_hwd_add_friend', array( 'Friend_Ajax', 'add_friend' ) );
 add_action( 'wp_ajax_nopriv_hwd_add_friend', array( 'Friend_Ajax', 'add_friend' ) );
+add_action( 'wp_head', array( 'Friend_Ajax', 'ajaxurl') );

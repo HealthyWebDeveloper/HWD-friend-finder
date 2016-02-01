@@ -1,6 +1,8 @@
 // https://travismaynard.com/writing/getting-started-with-gulp
 // https://www.npmjs.com/package/gulp-minify-css
 
+// npm install jshint gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename gulp-minify-css --save-dev 
+
 // Include gulp
 var gulp = require('gulp'); 
 
