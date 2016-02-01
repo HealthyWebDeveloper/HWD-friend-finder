@@ -39,4 +39,5 @@ class Friend_Ajax {
 
 add_action( 'wp_ajax_hwd_add_friend', array( 'Friend_Ajax', 'add_friend' ) );
 add_action( 'wp_ajax_nopriv_hwd_add_friend', array( 'Friend_Ajax', 'add_friend' ) );
-add_action( 'wp_head', array( 'Friend_Ajax', 'ajaxurl') );
+add_action( 'wp_head', array( 'Friend_Ajax', 'ajaxurl'), 0 );
+add_action( 'admin_head', array( 'Friend_Ajax', 'ajaxurl'), 0 );
