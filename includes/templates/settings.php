@@ -9,16 +9,6 @@
 
 <?php
 
-$consumer_key = get_option( 'hwd_consumer_key', false );
-$consumer_secret = get_option( 'hwd_consumer_secret', false );
-$fitbit_token = get_option( 'hwd_fitbit_token', false );
-$fitbit_secret = get_option( 'hwd_fitbit_secret', false );
-
-define( 'HWD_CONSUMER_KEY', $consumer_key );
-define( 'HWD_CONSUMER_SECRET', $consumer_secret );
-define( 'HWD_FITBIT_TOKEN', $fitbit_token );
-define( 'HWD_FITBIT_SECRET', $fitbit_secret );
-
 $fitbit_php = new FitBitPHP( HWD_CONSUMER_KEY, HWD_CONSUMER_SECRET, 0, null, 'json' );
 
 $fitbit_php->setOAuthDetails( HWD_FITBIT_TOKEN, HWD_FITBIT_SECRET );
