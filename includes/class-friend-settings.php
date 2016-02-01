@@ -67,7 +67,7 @@ if(!class_exists('Friend_Settings'))
         public function settings_section_friend_settings()
         {
             // Think of this as help text for the section.
-            _e('These settings do things for the WP Plugin Template.', 'hwd');
+            _e('These settings do things for the HWD friend plugin.', 'hwd');
         }
     
         /**
