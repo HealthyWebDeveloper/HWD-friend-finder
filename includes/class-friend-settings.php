@@ -29,8 +29,8 @@ if(!class_exists('Friend_Settings'))
         public function admin_init()
         {
             // register your plugin's settings
-            register_setting('friend_settings-group', 'setting_a');
-            register_setting('friend_settings-group', 'setting_b');
+            register_setting('friend_settings-group', 'consumer_key');
+            register_setting('friend_settings-group', 'consumer_secret');
 
             // add your settings section
             add_settings_section(
@@ -42,23 +42,23 @@ if(!class_exists('Friend_Settings'))
         
             // add your setting's fields
             add_settings_field(
-                'friend_settings-setting_a', 
-                __( 'Setting A', 'hwd' ), 
+                'friend_settings-consumer_key', 
+                __( 'Consumer Key', 'hwd' ), 
                 array(&$this, 'settings_field_input_text'), 
                 'friend_settings', 
                 'friend_settings-section',
                 array(
-                    'field' => 'setting_a'
+                    'field' => 'consumer_key'
                 )
             );
             add_settings_field(
-                'friend_settings-setting_b', 
-                __( 'Setting B', 'hwd' ), 
+                'friend_settings-consumer_secret', 
+                __( 'Consumer Secret', 'hwd' ), 
                 array(&$this, 'settings_field_input_text'), 
                 'friend_settings', 
                 'friend_settings-section',
                 array(
-                    'field' => 'setting_b'
+                    'field' => 'consumer_secret'
                 )
             );
             // Possibly do additional admin_init tasks
