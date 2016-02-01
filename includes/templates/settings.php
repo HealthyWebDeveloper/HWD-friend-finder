@@ -64,7 +64,7 @@
               <tr><th scope="row"><?php _e( 'Fitbit ID', 'hwd' ); ?></th><td><input type="text" placeholder="3JDKLR" value="" id="encodedId" name="encodedId"></td></tr>
               
             </tbody></table>
-            <p class="submit"><input type="submit" value="Create Profile" class="button button-primary" id="submit" name="submit"></p>
+            <p class="submit"><input type="submit" value="<?php _e( 'Create Profile', 'hwd' ); ?>" class="button button-primary" id="submit" name="submit"></p>
     </form>
 </div>
 
