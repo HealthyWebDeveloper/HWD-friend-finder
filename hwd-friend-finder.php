@@ -73,6 +73,15 @@ define( 'HWD_FITBIT_SECRET', $fitbit_secret );
 function hwd_enqueue_scripts() {
 	wp_enqueue_script( 'hwd-scripts', plugins_url( '/assets/js/hwd-scripts.min.js' , __FILE__ ), array( 'jquery' ), HWD_PLUGIN_VERSION, false);
 	wp_enqueue_style( 'hwd-styles', plugins_url( '/assets/css/hwd-styles.min.css' , __FILE__ ), $deps, HWD_PLUGIN_VERSION );
+
+    // Localize the script with new data
+    $translation_array = array(
+        'New_Friend_Added' => __( 'New Friend Added', 'hwd' ),
+        
+    );
+    wp_localize_script( 'hwd-scripts-localize', 'hwd_strings', $translation_array );
+
+    wp_enqueue_script( 'hwd-scripts-localize' );
 }
 
 add_action( 'wp_enqueue_scripts', 'hwd_enqueue_scripts' );
