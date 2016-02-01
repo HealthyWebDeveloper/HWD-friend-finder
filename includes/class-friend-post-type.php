@@ -54,10 +54,8 @@ class Friend_Post_Type {
 			'rewrite'             => true,
 			'capability_type'     => 'post',
 			'supports'            => array(
-				'title', 'editor', 'author', 'thumbnail',
-				'excerpt','custom-fields', 'trackbacks', 'comments',
-				'revisions', 'page-attributes', 'post-formats'
-				)
+				'title', 'custom-fields', 'revisions'
+				) // 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'comments', 'page-attributes', 'post-formats'
 		);
 
 		register_post_type( 'friend', $args );

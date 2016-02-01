@@ -5,7 +5,7 @@ Description: Adds custom post type and fun stuff for Fibit tools on a WordPress 
 Plugin URI: http://healthywebdeveloper.com
 Author: Bradford Knowlton
 Author URI: http://bradknowlton.com
-Version: 1.3.6
+Version: 1.3.7
 License: GPL2
 Text Domain: hwd
 Domain Path: /languages
@@ -38,7 +38,7 @@ Requires WP: 4.4
 // Help with setting up gulp
 // https://travismaynard.com/writing/getting-started-with-gulp
 
-define( 'HWD_PLUGIN_VERSION', '1.3.6' );  
+define( 'HWD_PLUGIN_VERSION', '1.3.7' );  
 
 // possible future global
 // define( 'PLUGIN_DIR', dirname(__FILE__).'/' );  
