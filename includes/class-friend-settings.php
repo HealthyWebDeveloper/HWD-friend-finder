@@ -29,8 +29,10 @@ if(!class_exists('Friend_Settings'))
         public function admin_init()
         {
             // register your plugin's settings
-            register_setting('friend_settings-group', 'consumer_key');
-            register_setting('friend_settings-group', 'consumer_secret');
+            register_setting('friend_settings-group', 'hwd_consumer_key');
+            register_setting('friend_settings-group', 'hwd_consumer_secret');
+            register_setting('friend_settings-group', 'hwd_fitbit_token');
+            register_setting('friend_settings-group', 'hwd_fitbit_secret');
 
             // add your settings section
             add_settings_section(
@@ -48,7 +50,7 @@ if(!class_exists('Friend_Settings'))
                 'friend_settings', 
                 'friend_settings-section',
                 array(
-                    'field' => 'consumer_key'
+                    'field' => 'hwd_consumer_key'
                 )
             );
             add_settings_field(
@@ -58,7 +60,28 @@ if(!class_exists('Friend_Settings'))
                 'friend_settings', 
                 'friend_settings-section',
                 array(
-                    'field' => 'consumer_secret'
+                    'field' => 'hwd_consumer_secret'
+                )
+            );
+             // add your setting's fields
+            add_settings_field(
+                'friend_settings-fitbit_token', 
+                __( 'Fitbit Token', 'hwd' ), 
+                array(&$this, 'settings_field_input_text'), 
+                'friend_settings', 
+                'friend_settings-section',
+                array(
+                    'field' => 'hwd_fitbit_token'
+                )
+            );
+            add_settings_field(
+                'friend_settings-fitbit_secret', 
+                __( 'Fitbit Secret', 'hwd' ), 
+                array(&$this, 'settings_field_input_text'), 
+                'friend_settings', 
+                'friend_settings-section',
+                array(
+                    'field' => 'hwd_fitbit_secret'
                 )
             );
             // Possibly do additional admin_init tasks
