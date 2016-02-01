@@ -2,6 +2,7 @@
 
 
 SELECT 
+	
 	`encodedId` AS 'csv_post_title', 
 	`aboutMe` AS 'csv_post_post', 
 	`aboutMe` AS 'csv_post_excerpt', 
@@ -16,10 +17,11 @@ SELECT
 	`averageDailySteps` AS 'averageDailySteps',
 	`city` AS 'city',
 	`country` AS 'country',
-	`dateOfBirth` AS 'dateOfBirth'
+	`dateOfBirth` AS 'dateOfBirth',
+	`active` AS 'active'
 
 
-	FROM `users` 
+	FROM `users` WHERE `active` = 1 AND `avatar` NOT LIKE '%static0.fitbit.com%' LIMIT 75
 
 
 -- "csv_post_title","csv_post_post","csv_post_type","csv_post_excerpt","csv_post_categories","csv_post_tags","csv_post_date","custom_field_1","custom_field_2"

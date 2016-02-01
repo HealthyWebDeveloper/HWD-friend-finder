@@ -34,6 +34,10 @@ class Friend_Shortcode {
 				                        'value' => 'https://static0.fitbit.com/images/profile/defaultProfile_100_female.gif',
 				                        'compare' => 'NOT LIKE',
 				                    ),
+				                    // array(
+				                    //     'key' => 'active',
+				                    //     'value' => '1',
+				                    // ),
 					        	)
 	    ) );  
 
@@ -44,8 +48,18 @@ class Friend_Shortcode {
 		 		$displayName = get_post_meta( get_the_id(), 'displayName', true );
 		 		$avatar = get_post_meta( get_the_id(), 'avatar150', true );
 
-		        $return .=  sprintf('<div class="hwd-profile-list-item"><img src="%s" /><h2>%s</h2><div class="hide">%s</div></div>', $avatar, $displayName, get_the_content() );
+		 		$return .= sprintf('<div class="col-lg-3 col-sm-3 focus-box">
+		 								<div class="service-icon">
+		 									<i style="background:url(%s) no-repeat center;width:100%%; height:100%%;" class="pixeden"></i>
+		 								</div>
+		 								<h3 class="red-border-bottom">%s</h3>
+		 								<a class="btn btn-primary btn-block green-btn btn-sm" href="https://www.fitbit.com/user/%s"><i class="fa fa-plus"></i> Add Friend</a>
+		 								<br/>
+		 							</div>', $avatar, $displayName, get_the_title(), get_the_content() );
+
 		     endwhile;
+
+		$return = '<div class="hwd-wrapper"><div class="row">'.$return.'</div></div>';
 	     
 	     else:
 
