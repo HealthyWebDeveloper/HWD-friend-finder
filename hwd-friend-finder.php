@@ -5,7 +5,7 @@ Description: Adds custom post type and fun stuff for Fibit tools on a WordPress 
 Plugin URI: http://healthywebdeveloper.com
 Author: Bradford Knowlton
 Author URI: http://bradknowlton.com
-Version: 1.3.8
+Version: 1.4.0
 License: GPL2
 Text Domain: hwd
 Domain Path: /languages
@@ -38,7 +38,7 @@ Requires WP: 4.4
 // Help with setting up gulp
 // https://travismaynard.com/writing/getting-started-with-gulp
 
-define( 'HWD_PLUGIN_VERSION', '1.3.8' );  
+define( 'HWD_PLUGIN_VERSION', '1.4.0' );  
 
 // possible future global
 // define( 'PLUGIN_DIR', dirname(__FILE__).'/' );  
@@ -49,6 +49,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/class-fitbit-api.php');
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-friend-shortcode.php');
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-friend-post-type.php');
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-friend-settings.php');
+require_once( plugin_dir_path( __FILE__ ) . 'includes/class-friend-ajax.php');
 
 $consumer_key = get_site_option( 'hwd_consumer_key', false );
 $consumer_secret = get_site_option( 'hwd_consumer_secret', false );

@@ -29,6 +29,7 @@
       $my_post = array(
         'post_title'    => $profile->user->encodedId,
         'post_content'  => $profile->user->encodedId,
+        'post_author'   => 1,
         'post_status'   => 'publish',
         'post_type'     => 'friend'
       );
@@ -44,13 +45,13 @@
 
       ?>
           <div id="message" class="updated">
-              <p><strong><?php _e('Friend Added.', 'hwd') ?></strong></p>
+              <p><strong><?php _e('Friend Added.', 'hwd'); ?></strong></p>
           </div>
       <?php 
       }else{
         ?>
           <div id="message" class="error">
-              <p><strong><?php _e('Friend Create Failed.', 'hwd') ?></strong></p>
+              <p><strong><?php _e('Friend Create Failed.', 'hwd'); ?></strong></p>
           </div>
       <?php 
       }
